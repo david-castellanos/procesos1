@@ -3,7 +3,7 @@ package edu.uptc.procesos.logic;
 import java.util.Random;
 import edu.uptc.procesos.gui.MainWindow;
 
-public class GestionProcesos{
+public class GestionProcesos {
 
 	private LinkedList procesos;
 
@@ -38,17 +38,16 @@ public class GestionProcesos{
 		procesos.deleteNode(pid);
 
 	}
-	
-	public Proceso getShortest(){
-		if (procesos.isEmpty()){
+
+	public Proceso getShortest() {
+		if (procesos.isEmpty()) {
 			return null;
-		}
-		else{
+		} else {
 			NodeList aux = procesos.getHead();
-			Proceso menor = aux.getProceso(); 
+			Proceso menor = aux.getProceso();
 
 			do {
-				
+
 				if (aux.getProceso().getTiempoE() < menor.getTiempoE()) {
 					menor = aux.getProceso();
 				}
@@ -58,8 +57,6 @@ public class GestionProcesos{
 			return menor;
 		}
 	}
-	
-	
 
 	public LinkedList getProcesos() {
 		return procesos;

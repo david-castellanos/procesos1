@@ -1,4 +1,5 @@
 package edu.uptc.procesos.gui;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -12,8 +13,8 @@ import javax.swing.event.ListSelectionListener;
 
 public class ManagementEvent implements ActionListener {
 	private MainWindow window;
-	private boolean fileChange=false;
-	
+	private boolean fileChange = false;
+
 	public static final String ABOUT = "Acerca de";
 	public static final String EJECUTAR = "Ejecutar planificador";
 	public static final String ADD = "Mostrar Add Dialog";
@@ -24,7 +25,6 @@ public class ManagementEvent implements ActionListener {
 	public static final String EXIT = "Salir";
 	public static final String EXIT_DIALOG = "Salir del dialogo";
 
-
 	public ManagementEvent(MainWindow window) {
 		this.window = window;
 	}
@@ -32,20 +32,19 @@ public class ManagementEvent implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 
-		switch(arg0.getActionCommand()){
-		case ADD:window.addProcess();
-		break;
-		case EXIT:System.exit(0);
-		break;
-		case EJECUTAR:	window.ejecutar();
-		break;
-		
+		switch (arg0.getActionCommand()) {
+		case ADD:
+			window.addProcess();
+			break;
+		case EXIT:
+			System.exit(0);
+			break;
+		case EJECUTAR:
+			window.ejecutar();
+			break;
+
 		}
 
 	}
 
-
-	
-	
-	
 }

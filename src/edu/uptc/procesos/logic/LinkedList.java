@@ -5,18 +5,15 @@ public class LinkedList {
 	private String lista;
 	private NodeList head, tail;
 
-	
 	public LinkedList(String lista) {
 		super();
 		this.lista = lista;
 	}
 
-	
 	public NodeList findNode(int serial) {
-		if (isEmpty()){
+		if (isEmpty()) {
 			return null;
-		}
-		else{
+		} else {
 			NodeList aux = head;
 
 			do {
@@ -28,10 +25,9 @@ public class LinkedList {
 
 			return null;
 		}
-		
+
 	}
 
-	
 	public NodeList addFirst(Proceso proceso) {
 		NodeList newNode = new NodeList();
 		newNode.setProceso(proceso);
@@ -55,7 +51,7 @@ public class LinkedList {
 		}
 		return head;
 	}
-	
+
 	public NodeList addLast(Proceso proceso) {
 		NodeList newNode = new NodeList();
 		newNode.setProceso(proceso);
@@ -79,30 +75,27 @@ public class LinkedList {
 		}
 		return head;
 	}
-	
-	public NodeList kick(){
+
+	public NodeList kick() {
 		head = head.getNext();
 		tail = head.getBack();
 		return tail;
 	}
 
-	
 	public NodeList deleteNode(int pid) {
 
 		NodeList next = head;
 		NodeList last = null;
 
 		if (findNode(pid) == head) {
-			if (findNode(pid) == tail){
+			if (findNode(pid) == tail) {
 				head = null;
 				tail = null;
-			}
-			else{
+			} else {
 				tail.setNext(head.getNext());
 				head.getNext().setBack(tail);
 				head = head.getNext();
 			}
-			
 
 			return head;
 		}
@@ -126,7 +119,7 @@ public class LinkedList {
 			return head;
 		}
 	}
-	
+
 	public boolean isEmpty() {
 
 		if (head == null) {
@@ -141,18 +134,16 @@ public class LinkedList {
 
 		NodeList aux = head;
 		int back, next;
-		
-		if (isEmpty()){
+
+		if (isEmpty()) {
 			System.out.println("Empty List");
-		}
-		else{
+		} else {
 			do {
 				back = aux.getBack().getProceso().getPid();
 
 				next = aux.getNext().getProceso().getPid();
 
-				System.out.println("back= " + back + "  --  "
-						+ aux.getProceso().getPid() + "  --  " + "next= " + next);
+				System.out.println("back= " + back + "  --  " + aux.getProceso().getPid() + "  --  " + "next= " + next);
 				aux = aux.getNext();
 			} while (aux != head);
 		}

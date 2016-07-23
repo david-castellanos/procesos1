@@ -11,8 +11,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
-public class PanelAcciones extends JPanel{
-	
+public class PanelAcciones extends JPanel {
+
 	private MainWindow window;
 	private JComboBox<String> planificadores;
 	private JButton salir, ejecutar, nuevoProceso;
@@ -20,7 +20,7 @@ public class PanelAcciones extends JPanel{
 	public PanelAcciones(MainWindow window) {
 		super();
 		this.window = window;
-		
+
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setBorder(new TitledBorder(new EtchedBorder(), "Opciones"));
 		planificadores = new JComboBox<>();
@@ -37,14 +37,14 @@ public class PanelAcciones extends JPanel{
 		nuevoProceso = new JButton("Nuevo proceso");
 		nuevoProceso.setActionCommand(ManagementEvent.ADD);
 		nuevoProceso.addActionListener(window.getEventos());
-		
+
 		JPanel cont1 = new JPanel();
 		JPanel cont2 = new JPanel();
 		JPanel cont = new JPanel();
 		cont.setLayout(new BoxLayout(cont, BoxLayout.Y_AXIS));
 		cont.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
-		cont2.setLayout(new GridLayout(2,1,0,15));
-		cont1.setLayout(new GridLayout(4,1,0,15));
+		cont2.setLayout(new GridLayout(2, 1, 0, 15));
+		cont1.setLayout(new GridLayout(4, 1, 0, 15));
 		cont2.add(new JLabel("Planificador:"));
 		cont2.add(planificadores);
 		cont1.add(cont2);
@@ -53,7 +53,7 @@ public class PanelAcciones extends JPanel{
 		cont1.add(salir);
 		cont.add(cont1);
 		add(cont);
-		
+
 	}
 
 	public JComboBox<String> getPlanificadores() {
@@ -87,10 +87,5 @@ public class PanelAcciones extends JPanel{
 	public void setNuevoProceso(JButton nuevoProceso) {
 		this.nuevoProceso = nuevoProceso;
 	}
-	
-	
-	
-	
-	
 
 }

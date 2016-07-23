@@ -22,7 +22,7 @@ public class HiloPlanificador extends Thread {
 		if (procesos.getHead() != null) {
 			while (procesos.getHead() != null) {
 				Proceso proceso = procesos.getHead().getProceso();
-				if(proceso.getEstado() == Estados.LISTO){
+				if (proceso.getEstado() == Estados.LISTO) {
 					try {
 						sleep(600);
 					} catch (InterruptedException e1) {
@@ -52,9 +52,8 @@ public class HiloPlanificador extends Thread {
 						window.updateTable();
 						proceso.start();
 					} else {
-						time = proceso.getTiempoInterrupt()-2;
-						window.getPanelInformacion().getProgreso()
-								.setMaximum(proceso.getTiempoE());
+						time = proceso.getTiempoInterrupt() - 2;
+						window.getPanelInformacion().getProgreso().setMaximum(proceso.getTiempoE());
 						while (time < proceso.getTiempoE()) {
 							try {
 								sleep(1);
@@ -73,8 +72,7 @@ public class HiloPlanificador extends Thread {
 					window.getPanelInformacion().getProgreso().setValue(0);
 					window.getPanelInformacion().getProgreso().setString("-");
 					window.getPanelInformacion().getProcesoActivo().setText("-");
-				}
-				else{
+				} else {
 					procesos.kick();
 					try {
 						sleep(600);
@@ -82,15 +80,13 @@ public class HiloPlanificador extends Thread {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					if(n == 1){
+					if (n == 1) {
 						window.getPanelInformacion().getProgreso().setString("Esperando.");
 						n++;
-					}
-					else if(n == 2){
+					} else if (n == 2) {
 						window.getPanelInformacion().getProgreso().setString("Esperando..");
 						n++;
-					}
-					else if(n == 3){
+					} else if (n == 3) {
 						window.getPanelInformacion().getProgreso().setString("Esperando...");
 						n = 1;
 					}
@@ -99,12 +95,12 @@ public class HiloPlanificador extends Thread {
 			}
 		}
 	}
-	
-	private void sjf(){
+
+	private void sjf() {
 		if (procesos.getHead() != null) {
 			while (procesos.getHead() != null) {
 				Proceso proceso = procesos.getHead().getProceso();
-				if(proceso.getEstado() == Estados.LISTO){
+				if (proceso.getEstado() == Estados.LISTO) {
 					try {
 						sleep(600);
 					} catch (InterruptedException e1) {
@@ -134,9 +130,8 @@ public class HiloPlanificador extends Thread {
 						window.updateTable();
 						proceso.start();
 					} else {
-						time = proceso.getTiempoInterrupt()-2;
-						window.getPanelInformacion().getProgreso()
-								.setMaximum(proceso.getTiempoE());
+						time = proceso.getTiempoInterrupt() - 2;
+						window.getPanelInformacion().getProgreso().setMaximum(proceso.getTiempoE());
 						while (time < proceso.getTiempoE()) {
 							try {
 								sleep(1);
@@ -155,12 +150,11 @@ public class HiloPlanificador extends Thread {
 					window.getPanelInformacion().getProgreso().setValue(0);
 					window.getPanelInformacion().getProgreso().setString("-");
 					window.getPanelInformacion().getProcesoActivo().setText("-");
-				}
-				else{
+				} else {
 					procesos.kick();
 					int n = 1;
 					n++;
-					window.getPanelInformacion().getProgreso().setString("Esperando..."+n);
+					window.getPanelInformacion().getProgreso().setString("Esperando..." + n);
 				}
 
 			}
