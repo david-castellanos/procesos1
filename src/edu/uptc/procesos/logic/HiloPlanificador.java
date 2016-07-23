@@ -165,6 +165,7 @@ public class HiloPlanificador extends Thread {
 		this.planificador = planificador;
 	}
 
+	@Override
 	public void run() {
 
 		switch (planificador) {

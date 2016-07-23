@@ -3,8 +3,6 @@ package edu.uptc.procesos.gui;
 import java.awt.BorderLayout;
 import java.awt.HeadlessException;
 
-import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 
 import edu.uptc.procesos.logic.GestionProcesos;

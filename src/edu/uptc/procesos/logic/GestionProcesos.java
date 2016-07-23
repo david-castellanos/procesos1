@@ -1,7 +1,6 @@
 package edu.uptc.procesos.logic;
 
 import java.util.Random;
-import edu.uptc.procesos.gui.MainWindow;
 
 public class GestionProcesos {
 
